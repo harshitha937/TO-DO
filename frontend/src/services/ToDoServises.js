@@ -1,9 +1,9 @@
 import axios from 'axios';
-
+import { SERVER_URL } from '../util/config';
 import { authHeaders } from '../util/authHeaders';
 import { getUserDetails } from '../util/GetUSer';
 
-const TODO_URL = 'http://localhost:5000/api/todo';
+const TODO_URL = `${SERVER_URL}/todo`;
 
 const createTodo = (data) => axios.post(`${TODO_URL}/create-todo`, data, authHeaders());
 

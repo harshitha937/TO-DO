@@ -1,6 +1,6 @@
 import axios from 'axios';
+import { SERVER_URL } from '../util/config';
 
-const SERVER_URL='http://localhost:5000/api';
 
 const registerUSer=(data)=>{
     return axios.post(SERVER_URL+'/register',data);
