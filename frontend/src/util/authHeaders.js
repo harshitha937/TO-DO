@@ -1,6 +1,17 @@
 import { getUserDetails } from "./GetUSer";
-
 export const authHeaders = () => {
-  const userToken = getUserDetails()?.token;
-  return { headers: { Authorization: userToken } };
+  const userDetails = getUserDetails();
+  console.log('userDetails:', userDetails); // 👈 Add this
+  const userToken = userDetails?.token;
+
+  if (userToken) {
+    return {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    };
+  } else {
+    console.log('NO TOKEN FOUND!');
+    return {};
+  }
 };

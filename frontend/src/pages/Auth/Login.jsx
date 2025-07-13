@@ -2,27 +2,40 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Input, Button, Form, message, Card } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-
+import AuthServices from '../../services/authServices'; 
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const onFinish = (values) => {
-    setLoading(true);
+const onFinish = async (values) => {
+  setLoading(true);
 
-    if (values.username && values.password) {
-      localStorage.setItem(
-        'user',
-        JSON.stringify({ username: values.username })
-      );
-      message.success(`Welcome, ${values.username}!`);
-      navigate('/todo');
-    } else {
-      message.error('Please enter username and password');
-    }
+  try {
+    const response = await AuthServices.loginUSer({
+      userName: values.username,
+      password: values.password,
+    });
 
+    // ✅ response.data has the real JWT
+    const { token, userId, userName, firstName, lastName } = response.data;
+
+
+    // ✅ Optionally store user details if you want
+    localStorage.setItem(
+      'toDoAppUser',
+      JSON.stringify({token, userId, userName, firstName, lastName })
+    );
+
+    message.success(`Welcome, ${userName}!`);
+    navigate('/todo');
+
+  } catch (err) {
+    console.error(err);
+    message.error(err?.response?.data?.message || 'Login failed!');
+  } finally {
     setLoading(false);
-  };
+  }
+};
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-black dark:bg-gray-900 text-white z-50 ">

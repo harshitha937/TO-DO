@@ -1,7 +1,7 @@
 const User=require('../modules/userModule.js');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const SECRET_JWT= process.env.SECRET_JWT  || "87gscc2zahsms";
+const SECRET_JWT= process.env.SECRET_JWT  ||  '87gscc2zahsms' ;
 async function registerUser(req,res){
     let {firstName,lastName,userName,email,password}=req.body;
     try{
@@ -24,7 +24,7 @@ async function loginUser(req,res){
     let {userName,password}=req.body;
     try{
 
-        const {userName,password}= req.body;
+        
         const user =await User.findOne({userName});
         if(!user){
             return res.status(404).send({message:"Authentication Failed!!"});
@@ -34,7 +34,7 @@ async function loginUser(req,res){
         if(!isPasswordValid){
             return res.status(404).send({message:"Entered Wrong Password!"});
         }
-        let token = await jwt.sign({userId:user?._id},SECRET_JWT,{expiresIn:'1h'});
+        let token = await jwt.sign({userId:user?._id},SECRET_JWT,{expiresIn:'7d'});
         let finalData ={
             userId:user?._id,
             userName:user?.userName,

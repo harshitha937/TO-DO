@@ -13,18 +13,17 @@ const createTodo = async (req,res)=>{
 
     }
 }
-const getTodoList = async (req,res)=>{
-    let{userId} =req.params;
-    try{
+const getTodoList = async (req, res) => {
+  try {
+    const userId = req.user.userId; // ✅ comes from JWT
+    const result = await ToDo.find({ createdBy: userId });
+    res.send(result);
+  } catch (err) {
+    console.log(err);
+    res.status(400).send(err);
+  }
+};
 
-        const result = await ToDo.find({createdBy:userId});
-        res.send(result);
-    }catch(err){
-        console.log(err);
-        res.status(400).send(err);
-    }
-    
-}
 
 const deleteTodo= async(req,res)=>{
     try{

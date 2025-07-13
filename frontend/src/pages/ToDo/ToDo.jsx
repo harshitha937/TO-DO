@@ -39,9 +39,11 @@ function ToDo() {
   const navigate = useNavigate();
 
   const getTodoList = async () => {
-    const user = getUserDetails();
+   
     try {
-      const response = await ToDoServices.getTodoList(user?.userId);
+        const user = getUserDetails();  
+      const userId = user?.userId;
+      const response = await ToDoServices.getTodoList(userId);
       setAllTodo(response.data);
     } catch (err) {
       console.log(err);
@@ -59,7 +61,7 @@ function ToDo() {
   }, [navigate]);
 
   useEffect(() => {
-    // Filter tasks when task type changes
+    
     let filtered = [];
     if (currentTaskType === 'complete') {
       filtered = allTodo.filter((item) => item.isCompleted);
@@ -292,7 +294,7 @@ function ToDo() {
               ))
             ) : (
               <div className="col-span-full text-center text-gray-500 text-lg">
-               <Empty />
+               <Empty  />
               </div>
             )}
           </div>
