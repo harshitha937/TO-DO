@@ -57,6 +57,8 @@ npm install
 ##create .env:REACT_APP_API_URL=http://localhost:5000/api
 ##run :npm start frontend
 
+---
+
 🧭 Application Workflow
 --JWT authentication secures API calls—frontend automatically stores the token.
 
@@ -65,6 +67,8 @@ npm install
 --Tailwind CSS ensures responsive styling.
 
 --Ant Design is used for modals, dropdowns, buttons, and feedback.
+
+---
 
 🔧 Examples of Use
 --Create a new account or log in.
@@ -75,8 +79,10 @@ npm install
 
 --Edit or remove tasks via intuitive controls.
 
+----
 
 🧱 Project Structure:
+
 TO-DO/
 ├── frontend/                # React frontend
 │   └── src/
@@ -89,6 +95,7 @@ TO-DO/
 │   ├── routes/            # API endpoints
 │   └── index.js.js          # Entry point
 
+---
 📚 API Endpoints:
 
 | Method | Endpoint             | Description           |
@@ -100,7 +107,7 @@ TO-DO/
 | PATCH  | `/api/tasks/:id`     | Update a task         |
 | DELETE | `/api/tasks/:id`     | Delete a task         |
 
-
+---
 🙋‍♀️ Author:
 Harshitha
 GitHub: @harshitha937
