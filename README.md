@@ -5,6 +5,63 @@ MERN TO-DO
 TaskApp is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) task management app. It allows users to manage their personal or professional tasks with a clean, modern UI using **Tailwind CSS** and **Ant Design**.
 
 ---
+###Preview:
+
+# My To-Do App
+
+This is a simple To-Do app built with MERN stack.
+
+## Screenshots
+
+### Landing Page
+![Landing](screenshots/Landing.png)
+
+### Home Page
+![Home](screenshots/Home.png)
+
+### Login Page
+![Login](screenshots/Login.png)
+
+### Register Page
+![Register](screenshots/Register.png)
+
+### Searchbar
+![Searchbar](screenshots/Searchbar.png)
+
+### Task Added
+![Task Added](screenshots/TaskAdded.png)
+
+### No Data
+![No Data](screenshots/No%20data.png)
+
+### Redirecting
+![Redirecting](screenshots/Redirecting.png)
+
+### All Toggle
+![All Toggle](screenshots/All%20Toggle.png)
+
+### Complete Toggle
+![Complete Toggle](screenshots/CompleteToggle.png)
+
+### Incomplete Toggle
+![Incomplete Toggle](screenshots/Incomplete%20Toggle.png)
+
+### Edit
+![Edit](screenshots/Edit.png)
+
+### Delete
+![Delete](screenshots/Delete.png)
+
+### Hover
+![Hover](screenshots/Hover.png)
+
+
+###ALL Toggle button
+![ALL Toggle button](screenshots/All Toggle.png)
+
+###Delete button
+![Delete](screenshots/Deletee.png)
+
 
 ---
 
